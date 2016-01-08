@@ -1,0 +1,38 @@
+allprojects {  
+    group = 'org.sample'
+    version = '0.0.1-SNAPSHOT'
+}
+ 
+subprojects {
+ 
+    apply plugin: 'java'
+     
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+     
+    project.ext {
+        springBootVersion = '1.2.7.RELEASE'
+    }
+     
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    
+    dependencies{    
+     compile('org.apache.camel:camel-core:2.16.0')
+     compile('org.apache.camel:camel-jms:2.16.0')
+     compile('org.apache.camel:camel-spring:2.16.0')
+     compile('org.apache.activemq:activemq-camel:5.12.1')
+     compile('org.apache.activemq:activemq-pool:5.12.1')
+     compile('org.apache.camel:camel-spring-javaconfig:2.16.0')
+     compile('org.apache.camel:camel-test:2.16.0')
+     compile('commons-configuration:commons-configuration:1.6')
+     compile('log4j:log4j:1.2.17')
+     compile('junit:junit:4.12')
+    }
+}
+ 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
