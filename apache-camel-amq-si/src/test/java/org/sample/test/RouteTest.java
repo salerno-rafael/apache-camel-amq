@@ -1,4 +1,4 @@
-package br.com.ilegra.test;
+package org.sample.test;
 
 import org.apache.camel.EndpointInject;
 import org.apache.camel.LoggingLevel;
